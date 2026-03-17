@@ -9,24 +9,27 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Momentum Coach | Demo de Landing para Entrenador Personal",
+  metadataBase: new URL("https://genericotrainer.vercel.app"),
+  title: "Momentum Coach | Entrenador personal en Valencia y online",
   description:
-    "Landing demo para entrenador personal con enfoque premium: quiz inicial, propuesta de valor clara, servicios presencial y online, prueba social, FAQ y formulario de captación.",
-  keywords: [
-    "landing entrenador personal",
-    "web entrenador personal",
-    "demo landing fitness",
-    "personal trainer landing page",
-    "entrenador personal online",
-    "captacion de leads fitness",
-    "landing page entrenador personal",
-  ],
+    "Entrenamiento personal adaptado a tu objetivo, tu nivel y tu rutina. Presencial en Valencia y online con seguimiento.",
+  verification: {
+    google: "6Cr92jGfY8D6cZX4sdEC1v1vECb_mgjBy8Jd9qoUfI4",
+  },
   openGraph: {
-    title: "Momentum Coach | Demo de Landing para Entrenador Personal",
+    title: "Momentum Coach | Entrenador personal en Valencia y online",
     description:
-      "Demo genérica de landing page para entrenador personal con diseño premium y enfoque de captación.",
-    type: "website",
+      "Entrenamiento personal adaptado a tu objetivo, tu nivel y tu rutina. Presencial en Valencia y online con seguimiento.",
+    url: "https://genericotrainer.vercel.app",
+    siteName: "Momentum Coach",
     locale: "es_ES",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Momentum Coach | Entrenador personal en Valencia y online",
+    description:
+      "Entrenamiento personal adaptado a tu objetivo, tu nivel y tu rutina. Presencial en Valencia y online con seguimiento.",
   },
 };
 
