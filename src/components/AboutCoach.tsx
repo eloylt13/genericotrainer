@@ -1,53 +1,247 @@
 export default function AboutCoach() {
+  const colors = {
+    bg: "#0F1115",
+    card: "#171B22",
+    border: "#2E3643",
+    text: "#F5F7FA",
+    textMuted: "#B8C0CC",
+    accent: "#C8A45D",
+  };
+
   return (
-    <section className="px-6 py-16 md:py-20" style={{ backgroundColor: "#0A0E1A" }}>
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
-        <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-8 md:p-10 flex items-center justify-center min-h-[340px]">
-          <div className="w-40 h-40 rounded-full bg-[#CCFF00]/10 border border-[#CCFF00]/30 flex items-center justify-center">
-            <span className="text-[#CCFF00] text-4xl font-extrabold">PT</span>
-          </div>
-        </div>
+    <section
+      className="px-6 py-14 md:py-16"
+      style={{ backgroundColor: colors.bg }}
+    >
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-[0.92fr_1.08fr] gap-8 md:gap-10 items-start">
+          <div
+            className="rounded-3xl p-8 md:p-10"
+            style={{
+              border: `1px solid ${colors.border}`,
+              backgroundColor: colors.card,
+            }}
+          >
+            <div className="flex flex-col items-center justify-center text-center h-full min-h-[280px]">
+              <div
+                className="w-28 h-28 rounded-full flex items-center justify-center mb-6"
+                style={{
+                  backgroundColor: "rgba(200, 164, 93, 0.08)",
+                  border: "1px solid rgba(200, 164, 93, 0.28)",
+                }}
+              >
+                <span
+                  className="text-4xl font-extrabold"
+                  style={{ color: colors.accent }}
+                >
+                  MC
+                </span>
+              </div>
 
-        <div>
-          <p className="text-[#CCFF00] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">Sobre PrietoTrainer</p>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-5">Entrenamiento personalizado, seguimiento real y un plan adaptado a ti</h2>
-          <div className="space-y-4 text-[#D1D5DB] text-sm md:text-base leading-relaxed">
-            <p>PrietoTrainer está enfocado en ayudar a personas que quieren perder grasa, ganar músculo o transformar su físico con una estrategia clara y sostenible.</p>
-            <p>El enfoque combina tres pilares: entrenamiento, nutrición y seguimiento. La idea no es darte una rutina genérica, sino un plan personalizado que se adapte a tu punto de partida, tu objetivo y tu ritmo de vida.</p>
-            <p>La cercanía, el acompañamiento real y la personalización forman parte del valor diferencial del servicio, tanto en presencial como en online.</p>
+              <h3
+                className="text-2xl font-bold leading-tight mb-3"
+                style={{ color: colors.text }}
+              >
+                Entrenamiento adaptado a cada persona
+              </h3>
+
+              <p
+                className="text-sm md:text-base leading-relaxed max-w-md mb-6"
+                style={{ color: colors.textMuted }}
+              >
+                Una demo pensada para mostrar una propuesta profesional,
+                cercana y orientada a resultados sostenibles.
+              </p>
+
+              <div className="flex flex-wrap justify-center gap-3">
+                <span
+                  className="px-4 py-2 rounded-full text-sm font-semibold"
+                  style={{
+                    color: colors.text,
+                    border: `1px solid ${colors.border}`,
+                    backgroundColor: "rgba(255,255,255,0.02)",
+                  }}
+                >
+                  1:1 personalizado
+                </span>
+                <span
+                  className="px-4 py-2 rounded-full text-sm font-semibold"
+                  style={{
+                    color: colors.text,
+                    border: `1px solid ${colors.border}`,
+                    backgroundColor: "rgba(255,255,255,0.02)",
+                  }}
+                >
+                  Presencial y online
+                </span>
+                <span
+                  className="px-4 py-2 rounded-full text-sm font-semibold"
+                  style={{
+                    color: colors.text,
+                    border: `1px solid ${colors.border}`,
+                    backgroundColor: "rgba(255,255,255,0.02)",
+                  }}
+                >
+                  Seguimiento real
+                </span>
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:col-span-2">
-              <p className="text-white font-bold mb-3">Ubicación</p>
-              <p className="text-[#B0B0B0] text-sm mb-3">Tavernes de la Valldigna, Valencia</p>
-              <div className="rounded-xl overflow-hidden border border-white/10">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12456.5!2d-0.2847!3d39.0747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61b8a8b8b8b8b8%3A0x1234567890!2sTavernes+de+la+Valldigna!5e0!3m2!1ses!2ses!4v1"
-                  width="100%"
-                  height="200"
-                  style={{ border: 0, filter: "invert(90%) hue-rotate(180deg) brightness(0.95) contrast(0.9)" }}
-                  allowFullScreen={false}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Ubicación PrietoTrainer en Tavernes de la Valldigna"
-                />
+          <div>
+            <p
+              className="text-[11px] font-bold tracking-[0.18em] uppercase mb-3"
+              style={{ color: colors.accent }}
+            >
+              Sobre Momentum Coach
+            </p>
+
+            <h2
+              className="text-3xl md:text-4xl font-extrabold leading-tight mb-5"
+              style={{ color: colors.text }}
+            >
+              Entrenamiento personalizado, seguimiento real y un enfoque
+              sostenible
+            </h2>
+
+            <div
+              className="space-y-4 text-sm md:text-base leading-relaxed"
+              style={{ color: colors.textMuted }}
+            >
+              <p>
+                Esta demo está pensada para un entrenador personal que quiere
+                transmitir claridad, cercanía y resultados realistas.
+              </p>
+
+              <p>
+                El servicio combina entrenamiento, pautas de nutrición y
+                seguimiento para ayudar a cada persona a avanzar con un método
+                adaptado a su punto de partida, su objetivo y su rutina.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-7">
+              <div
+                className="rounded-2xl p-5"
+                style={{
+                  border: `1px solid ${colors.border}`,
+                  backgroundColor: colors.card,
+                }}
+              >
+                <p
+                  className="font-bold mb-2"
+                  style={{ color: colors.text }}
+                >
+                  Modalidades
+                </p>
+                <p
+                  className="text-sm leading-relaxed"
+                  style={{ color: colors.textMuted }}
+                >
+                  Presencial, online e híbrido
+                </p>
+              </div>
+
+              <div
+                className="rounded-2xl p-5"
+                style={{
+                  border: `1px solid ${colors.border}`,
+                  backgroundColor: colors.card,
+                }}
+              >
+                <p
+                  className="font-bold mb-2"
+                  style={{ color: colors.text }}
+                >
+                  Método
+                </p>
+                <p
+                  className="text-sm leading-relaxed"
+                  style={{ color: colors.textMuted }}
+                >
+                  Entrenamiento, nutrición y control del progreso
+                </p>
+              </div>
+
+              <div
+                className="rounded-2xl p-5"
+                style={{
+                  border: `1px solid ${colors.border}`,
+                  backgroundColor: colors.card,
+                }}
+              >
+                <p
+                  className="font-bold mb-2"
+                  style={{ color: colors.text }}
+                >
+                  Enfoque
+                </p>
+                <p
+                  className="text-sm leading-relaxed"
+                  style={{ color: colors.textMuted }}
+                >
+                  Cercano, adaptable y orientado a resultados sostenibles
+                </p>
               </div>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-              <p className="text-white font-bold mb-2">Modalidades</p>
-              <p className="text-[#B0B0B0] text-sm">Presencial y online con seguimiento</p>
-            </div>
+            <div
+              className="rounded-2xl p-5 mt-4"
+              style={{
+                border: `1px solid ${colors.border}`,
+                backgroundColor: colors.card,
+              }}
+            >
+              <div className="flex items-center justify-between gap-3 mb-3">
+                <div>
+                  <p
+                    className="font-bold"
+                    style={{ color: colors.text }}
+                  >
+                    Ubicación
+                  </p>
+                  <p
+                    className="text-sm mt-1"
+                    style={{ color: colors.textMuted }}
+                  >
+                    Valencia, España
+                  </p>
+                </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-              <p className="text-white font-bold mb-2">Método</p>
-              <p className="text-[#B0B0B0] text-sm">Entrenamiento, nutrición y control del progreso</p>
-            </div>
+                <a
+                  href="https://maps.google.com/?q=Valencia,España"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-semibold px-3 py-2 rounded-lg"
+                  style={{
+                    color: colors.accent,
+                    border: "1px solid rgba(200, 164, 93, 0.28)",
+                    backgroundColor: "rgba(200, 164, 93, 0.08)",
+                  }}
+                >
+                  Abrir en Maps
+                </a>
+              </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:col-span-2">
-              <p className="text-white font-bold mb-2">Enfoque</p>
-              <p className="text-[#B0B0B0] text-sm">Cercano, adaptado y orientado a resultados</p>
+              <div
+                className="rounded-xl overflow-hidden"
+                style={{ border: `1px solid ${colors.border}` }}
+              >
+                <iframe
+                  src="https://www.google.com/maps?q=Valencia,España&z=12&output=embed"
+                  width="100%"
+                  height="240"
+                  style={{
+                    border: 0,
+                    filter:
+                      "invert(90%) hue-rotate(180deg) brightness(0.95) contrast(0.9)",
+                  }}
+                  allowFullScreen={false}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Ubicación en Valencia"
+                />
+              </div>
             </div>
           </div>
         </div>

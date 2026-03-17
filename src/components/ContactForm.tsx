@@ -1,6 +1,18 @@
 "use client";
 
-import { FormEvent, useState, useEffect } from "react";
+import { FormEvent, useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+
+const colors = {
+  bg: "#0F1115",
+  card: "#171B22",
+  input: "#11151B",
+  border: "#2E3643",
+  text: "#F5F7FA",
+  textMuted: "#B8C0CC",
+  placeholder: "#7F8794",
+  accent: "#C8A45D",
+};
 
 const objectiveMap: Record<string, string> = {
   "Perder grasa": "Perder grasa",
@@ -10,12 +22,18 @@ const objectiveMap: Record<string, string> = {
 };
 
 const modalityMap: Record<string, string> = {
-  "Presencial en Tavernes de la Valldigna": "Presencial",
+  Presencial: "Presencial",
   "Online con seguimiento": "Online",
-  "La mejor opción para mí": "No lo tengo claro todavía",
+  "Quiero que me recomienden la mejor opción": "No lo tengo claro todavía",
 };
 
-export default function ContactForm({ quizAnswers }: { quizAnswers?: Record<string, string> }) {
+export default function ContactForm({
+  quizAnswers,
+}: {
+  quizAnswers?: Record<string, string>;
+}) {
+  const router = useRouter();
+
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [objective, setObjective] = useState("Perder grasa");
@@ -27,6 +45,7 @@ export default function ContactForm({ quizAnswers }: { quizAnswers?: Record<stri
       const mapped = objectiveMap[quizAnswers.objetivo];
       if (mapped) setObjective(mapped);
     }
+
     if (quizAnswers?.modalidad) {
       const mapped = modalityMap[quizAnswers.modalidad];
       if (mapped) setModality(mapped);
@@ -35,70 +54,180 @@ export default function ContactForm({ quizAnswers }: { quizAnswers?: Record<stri
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     if (!name.trim()) {
       alert("Por favor, escribe tu nombre.");
       return;
     }
 
-    const lines = [
-      "Hola, me interesa una valoración gratuita.",
-      "",
-      "Nombre: " + name.trim(),
-      contact.trim() ? "Contacto: " + contact.trim() : "",
-      "Objetivo: " + objective,
-      "Modalidad: " + modality,
-      message.trim() ? "Mi caso: " + message.trim() : "",
-    ].filter(Boolean).join("\n");
-
-    const encoded = encodeURIComponent(lines);
-    window.open("https://wa.me/34665385628?text=" + encoded, "_blank");
+    router.push("/gracias");
   };
 
   const hasQuizData = quizAnswers?.objetivo || quizAnswers?.modalidad;
 
   return (
-    <form id="contact-form" onSubmit={handleSubmit} className="w-full rounded-2xl border border-white/10 bg-white/[0.04] p-6 md:p-7">
+    <form
+      id="contact-form"
+      onSubmit={handleSubmit}
+      className="w-full rounded-2xl p-6 md:p-7"
+      style={{
+        border: `1px solid ${colors.border}`,
+        backgroundColor: colors.card,
+      }}
+    >
       <div className="grid grid-cols-1 gap-4">
         {hasQuizData && (
-          <div className="rounded-xl border border-[#CCFF00]/20 bg-[#CCFF00]/5 px-4 py-3 mb-1">
-            <p className="text-xs text-[#CCFF00] font-semibold">Datos del quiz ya completados</p>
+          <div
+            className="rounded-xl px-4 py-3 mb-1"
+            style={{
+              border: `1px solid rgba(200, 164, 93, 0.25)`,
+              backgroundColor: "rgba(200, 164, 93, 0.08)",
+            }}
+          >
+            <p
+              className="text-xs font-semibold"
+              style={{ color: colors.accent }}
+            >
+              Datos del quiz ya completados
+            </p>
           </div>
         )}
+
         <div>
-          <label className="block text-sm font-semibold text-white mb-2">Nombre</label>
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Tu nombre" className="w-full rounded-xl border border-white/10 bg-[#0A0E1A] px-4 py-3 text-white placeholder:text-[#7C8594] outline-none focus:border-[#CCFF00]" />
+          <label
+            className="block text-sm font-semibold mb-2"
+            style={{ color: colors.text }}
+          >
+            Nombre
+          </label>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Tu nombre"
+            className="w-full rounded-xl px-4 py-3 outline-none"
+            style={{
+              border: `1px solid ${colors.border}`,
+              backgroundColor: colors.input,
+              color: colors.text,
+            }}
+          />
         </div>
+
         <div>
-          <label className="block text-sm font-semibold text-white mb-2">Email o WhatsApp (opcional)</label>
-          <input type="text" value={contact} onChange={(e) => setContact(e.target.value)} placeholder="Por si prefieres que te contacte por otra vía" className="w-full rounded-xl border border-white/10 bg-[#0A0E1A] px-4 py-3 text-white placeholder:text-[#7C8594] outline-none focus:border-[#CCFF00]" />
+          <label
+            className="block text-sm font-semibold mb-2"
+            style={{ color: colors.text }}
+          >
+            Email o WhatsApp
+          </label>
+          <input
+            type="text"
+            value={contact}
+            onChange={(e) => setContact(e.target.value)}
+            placeholder="Tu mejor contacto"
+            className="w-full rounded-xl px-4 py-3 outline-none"
+            style={{
+              border: `1px solid ${colors.border}`,
+              backgroundColor: colors.input,
+              color: colors.text,
+            }}
+          />
         </div>
+
         <div>
-          <label className="block text-sm font-semibold text-white mb-2">Objetivo principal</label>
-          <select value={objective} onChange={(e) => setObjective(e.target.value)} className="w-full rounded-xl border border-white/10 bg-[#0A0E1A] px-4 py-3 text-white outline-none focus:border-[#CCFF00]">
+          <label
+            className="block text-sm font-semibold mb-2"
+            style={{ color: colors.text }}
+          >
+            Objetivo principal
+          </label>
+          <select
+            value={objective}
+            onChange={(e) => setObjective(e.target.value)}
+            className="w-full rounded-xl px-4 py-3 outline-none"
+            style={{
+              border: `1px solid ${colors.border}`,
+              backgroundColor: colors.input,
+              color: colors.text,
+            }}
+          >
             <option>Perder grasa</option>
             <option>Ganar músculo</option>
             <option>Perder grasa y ganar músculo</option>
             <option>Mejorar salud y forma física</option>
           </select>
         </div>
+
         <div>
-          <label className="block text-sm font-semibold text-white mb-2">Modalidad</label>
-          <select value={modality} onChange={(e) => setModality(e.target.value)} className="w-full rounded-xl border border-white/10 bg-[#0A0E1A] px-4 py-3 text-white outline-none focus:border-[#CCFF00]">
+          <label
+            className="block text-sm font-semibold mb-2"
+            style={{ color: colors.text }}
+          >
+            Modalidad
+          </label>
+          <select
+            value={modality}
+            onChange={(e) => setModality(e.target.value)}
+            className="w-full rounded-xl px-4 py-3 outline-none"
+            style={{
+              border: `1px solid ${colors.border}`,
+              backgroundColor: colors.input,
+              color: colors.text,
+            }}
+          >
             <option>Presencial</option>
             <option>Online</option>
             <option>No lo tengo claro todavía</option>
           </select>
         </div>
+
         <div>
-          <label className="block text-sm font-semibold text-white mb-2">Cuéntame brevemente tu caso</label>
-          <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Por ejemplo: quiero perder grasa, me cuesta ser constante y tengo poco tiempo" rows={4} className="w-full rounded-xl border border-white/10 bg-[#0A0E1A] px-4 py-3 text-white placeholder:text-[#7C8594] outline-none focus:border-[#CCFF00] resize-none" />
+          <label
+            className="block text-sm font-semibold mb-2"
+            style={{ color: colors.text }}
+          >
+            Cuéntame brevemente tu caso
+          </label>
+          <textarea
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Por ejemplo: quiero perder grasa, me cuesta ser constante y tengo poco tiempo"
+            rows={4}
+            className="w-full rounded-xl px-4 py-3 outline-none resize-none"
+            style={{
+              border: `1px solid ${colors.border}`,
+              backgroundColor: colors.input,
+              color: colors.text,
+            }}
+          />
         </div>
-        <p className="text-[#B0B0B0] text-xs text-center">Solo te llevará 1 minuto.</p>
-        <button type="submit" className="w-full py-4 rounded-xl font-bold text-base border-none bg-[#CCFF00] text-[#0A0E1A] shadow-[0_0_20px_rgba(204,255,0,0.15)] cursor-pointer flex items-center justify-center gap-2">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#0A0E1A"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.305 0-4.461-.636-6.312-1.742l-.44-.262-3.093 1.037 1.037-3.093-.262-.44A9.955 9.955 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
-          Enviar por WhatsApp
+
+        <p
+          className="text-xs text-center"
+          style={{ color: colors.textMuted }}
+        >
+          Solo te llevará 1 minuto.
+        </p>
+
+        <button
+          type="submit"
+          className="w-full py-4 rounded-xl font-bold text-base border-none cursor-pointer"
+          style={{
+            backgroundColor: colors.accent,
+            color: colors.bg,
+            boxShadow: "0 0 20px rgba(200,164,93,0.18)",
+          }}
+        >
+          Reservar mi valoración gratuita
         </button>
-        <p className="text-[#8F97A6] text-xs leading-relaxed text-center">Se abrirá WhatsApp con tu mensaje listo para enviar a Juanma.</p>
+
+        <p
+          className="text-xs leading-relaxed text-center"
+          style={{ color: colors.textMuted }}
+        >
+          Demo de formulario: al enviar se muestra la página de confirmación.
+        </p>
       </div>
     </form>
   );

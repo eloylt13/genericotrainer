@@ -1,12 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --bg-primary: #0A0E1A;
-  --bg-alt: #F5F5F5;
-  --accent: #CCFF00;
-  --text-light: #FFFFFF;
-  --text-dark: #1A1A1A;
-  --text-muted: #B0B0B0;
+  --bg-primary: #0F1115;
+  --bg-alt: #11151B;
+  --accent: #C8A45D;
+  --text-light: #F5F7FA;
+  --text-dark: #111111;
+  --text-muted: #B8C0CC;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -15,11 +19,7 @@ body {
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 ::selection {
-  background-color: #CCFF00;
-  color: #0A0E1A;
+  background-color: var(--accent);
+  color: #111111;
 }

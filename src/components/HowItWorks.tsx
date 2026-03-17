@@ -1,43 +1,61 @@
 export default function HowItWorks() {
+    const colors = {
+        bg: "#11151B",
+        card: "#171B22",
+        border: "#2E3643",
+        text: "#F5F7FA",
+        textMuted: "#B8C0CC",
+        accent: "#C8A45D",
+    };
+
     const steps = [
         {
             number: "01",
-            title: "Cuéntame tu objetivo y tu punto de partida y tu punto de partida",
+            title: "Me cuentas tu objetivo y tu punto de partida",
             description:
-                "Primero revisamos qué quieres conseguir, tu punto de partida y qué opción encaja mejor contigo.",
+                "Primero revisamos qué quieres conseguir, cómo estás ahora y qué opción encaja mejor contigo.",
         },
         {
             number: "02",
-            title: "Hacemos una valoración gratuita",
+            title: "Hacemos una valoración inicial gratuita",
             description:
-                "Hablamos contigo, resolvemos dudas y definimos un enfoque realista según tu caso.",
+                "Resolvemos dudas, revisamos tu caso y definimos un enfoque realista según tu situación.",
         },
         {
             number: "03",
             title: "Empiezas con una estrategia adaptada a ti",
             description:
-                "Recibes entrenamiento, nutrición y seguimiento para avanzar con estructura y resultados visibles.",
+                "Recibes entrenamiento, pautas de nutrición y seguimiento para avanzar con más estructura y claridad.",
         },
     ];
 
     return (
         <section
             className="px-6 py-12 md:py-16"
-            style={{ backgroundColor: "#09111F" }}
+            style={{ backgroundColor: colors.bg }}
         >
             <div className="max-w-6xl mx-auto">
                 <div className="max-w-2xl mx-auto text-center mb-10 md:mb-12">
-                    <p className="text-[#CCFF00] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
+                    <p
+                        className="text-[11px] font-bold tracking-[0.18em] uppercase mb-3"
+                        style={{ color: colors.accent }}
+                    >
                         Cómo funciona
                     </p>
 
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight">
-                        Así de simple es empezar
+                    <h2
+                        className="text-3xl md:text-4xl font-extrabold leading-tight"
+                        style={{ color: colors.text }}
+                    >
+                        Así es el proceso para empezar
                     </h2>
 
-                    <p className="text-[#B0B0B0] text-base md:text-lg leading-relaxed mt-4">
-                        La idea es que sepas desde el principio qué va a pasar y cómo vas a
-                        empezar a trabajar.
+                    <p
+                        className="text-base md:text-lg leading-relaxed mt-4"
+                        style={{ color: colors.textMuted }}
+                    >
+                        Sin complicarte, sin promesas vacías y con un enfoque claro desde el
+                        principio.
                     </p>
                 </div>
 
@@ -45,17 +63,30 @@ export default function HowItWorks() {
                     {steps.map((step) => (
                         <div
                             key={step.number}
-                            className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 md:p-7"
+                            className="rounded-2xl p-6 md:p-7"
+                            style={{
+                                border: `1px solid ${colors.border}`,
+                                backgroundColor: colors.card,
+                            }}
                         >
-                            <p className="text-[#CCFF00] text-sm font-extrabold tracking-[0.18em] uppercase mb-4">
+                            <p
+                                className="text-sm font-extrabold tracking-[0.18em] uppercase mb-4"
+                                style={{ color: colors.accent }}
+                            >
                                 {step.number}
                             </p>
 
-                            <h3 className="text-white text-xl font-bold leading-snug mb-3">
+                            <h3
+                                className="text-xl font-bold leading-snug mb-3"
+                                style={{ color: colors.text }}
+                            >
                                 {step.title}
                             </h3>
 
-                            <p className="text-[#B0B0B0] text-sm md:text-base leading-relaxed">
+                            <p
+                                className="text-sm md:text-base leading-relaxed"
+                                style={{ color: colors.textMuted }}
+                            >
                                 {step.description}
                             </p>
                         </div>

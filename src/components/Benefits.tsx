@@ -1,45 +1,63 @@
 export default function Benefits() {
+    const colors = {
+        bg: "#0F1115",
+        card: "#171B22",
+        border: "#2E3643",
+        text: "#F5F7FA",
+        textMuted: "#B8C0CC",
+        accent: "#C8A45D",
+    };
+
     const benefits = [
         {
             title: "Plan adaptado a tu rutina",
             description:
-                "Entrena con una estructura que encaja en tu rutina, incluso si tienes poco tiempo.",
+                "Entrena con una estructura pensada para tu objetivo, tu nivel y el tiempo real que tienes disponible.",
         },
         {
-            title: "Estrategia completa e integrada",
+            title: "Entrenamiento + nutrición",
             description:
-                "No solo tienes una rutina: cuentas con una estrategia completa y acompañamiento real.",
+                "No solo sigues ejercicios: avanzas con una estrategia más completa y con mejores decisiones durante el proceso.",
         },
         {
-            title: "Resultados reales con proceso claro",
+            title: "Resultados con un proceso claro",
             description:
-                "Deja de probar cosas al azar y empieza a avanzar con un plan pensado para ti.",
+                "Deja de probar cosas al azar y empieza a avanzar con un plan pensado para ti y para mantener la constancia.",
         },
         {
-            title: "Acompañamiento real y cercano",
+            title: "Seguimiento real y continuo",
             description:
-                "Acompañamiento directo para resolver dudas, ajustar el proceso y mantener la constancia.",
+                "Tienes acompañamiento, ajustes y control para no perder el rumbo a mitad del proceso.",
         },
     ];
 
     return (
         <section
             className="px-6 py-16 md:py-20"
-            style={{ backgroundColor: "#0A0E1A" }}
+            style={{ backgroundColor: colors.bg }}
         >
             <div className="max-w-6xl mx-auto">
                 <div className="max-w-2xl mx-auto text-center mb-10 md:mb-12">
-                    <p className="text-[#CCFF00] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
+                    <p
+                        className="text-[11px] font-bold tracking-[0.18em] uppercase mb-3"
+                        style={{ color: colors.accent }}
+                    >
                         Beneficios
                     </p>
 
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight">
+                    <h2
+                        className="text-3xl md:text-4xl font-extrabold leading-tight"
+                        style={{ color: colors.text }}
+                    >
                         Deja de improvisar y empieza a avanzar con una estrategia clara
                     </h2>
 
-                    <p className="text-[#B0B0B0] text-base md:text-lg leading-relaxed mt-4">
-                        La idea no es entrenar más por entrenar. La idea es tener un sistema
-                        claro para avanzar con constancia y resultados reales.
+                    <p
+                        className="text-base md:text-lg leading-relaxed mt-4"
+                        style={{ color: colors.textMuted }}
+                    >
+                        Cuando tienes un plan adaptado a ti, todo se vuelve más simple, más
+                        sostenible y más eficaz.
                     </p>
                 </div>
 
@@ -47,17 +65,36 @@ export default function Benefits() {
                     {benefits.map((benefit) => (
                         <div
                             key={benefit.title}
-                            className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 md:p-7"
+                            className="rounded-2xl p-6 md:p-7"
+                            style={{
+                                border: `1px solid ${colors.border}`,
+                                backgroundColor: colors.card,
+                            }}
                         >
-                            <div className="w-10 h-10 rounded-full bg-[#CCFF00]/10 border border-[#CCFF00]/30 flex items-center justify-center mb-4">
-                                <div className="w-2.5 h-2.5 rounded-full bg-[#CCFF00]" />
+                            <div
+                                className="w-10 h-10 rounded-full flex items-center justify-center mb-4"
+                                style={{
+                                    backgroundColor: "rgba(200, 164, 93, 0.10)",
+                                    border: `1px solid rgba(200, 164, 93, 0.30)`,
+                                }}
+                            >
+                                <div
+                                    className="w-2.5 h-2.5 rounded-full"
+                                    style={{ backgroundColor: colors.accent }}
+                                />
                             </div>
 
-                            <h3 className="text-white text-xl font-bold leading-snug mb-3">
+                            <h3
+                                className="text-xl font-bold leading-snug mb-3"
+                                style={{ color: colors.text }}
+                            >
                                 {benefit.title}
                             </h3>
 
-                            <p className="text-[#B0B0B0] text-sm md:text-base leading-relaxed">
+                            <p
+                                className="text-sm md:text-base leading-relaxed"
+                                style={{ color: colors.textMuted }}
+                            >
                                 {benefit.description}
                             </p>
                         </div>
