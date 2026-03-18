@@ -49,8 +49,7 @@ export default function AboutCoach() {
                 className="text-sm md:text-base leading-relaxed max-w-md mb-6"
                 style={{ color: colors.textMuted }}
               >
-                Una demo pensada para mostrar una propuesta profesional,
-                cercana y orientada a resultados sostenibles.
+                Una propuesta profesional, cercana y orientada a resultados sostenibles.
               </p>
 
               <div className="flex flex-wrap justify-center gap-3">
@@ -100,8 +99,7 @@ export default function AboutCoach() {
               className="text-3xl md:text-4xl font-extrabold leading-tight mb-5"
               style={{ color: colors.text }}
             >
-              Entrenamiento personalizado, seguimiento real y un enfoque
-              sostenible
+              Entrenamiento personalizado, seguimiento real y un enfoque sostenible
             </h2>
 
             <div
@@ -109,8 +107,9 @@ export default function AboutCoach() {
               style={{ color: colors.textMuted }}
             >
               <p>
-                Esta demo está pensada para un entrenador personal que quiere
-                transmitir claridad, cercanía y resultados realistas.
+                Momentum Coach está pensado para personas que quieren mejorar su
+                físico, ganar constancia y avanzar con una estrategia más clara y
+                realista.
               </p>
 
               <p>

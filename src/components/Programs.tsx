@@ -14,11 +14,11 @@ export default function Programs() {
             title: "Entrenamiento presencial",
             subtitle: "Acompañamiento directo",
             description:
-                "Ideal si buscas corrección técnica, cercanía y más control durante el proceso.",
+                "Ideal si buscas cercanía, corrección técnica y un trabajo más guiado durante el proceso.",
             bullets: [
                 "Sesiones personalizadas",
+                "Corrección y acompañamiento",
                 "Seguimiento del progreso",
-                "Ajustes según evolución",
                 "Ideal si valoras supervisión directa",
             ],
         },
@@ -26,11 +26,11 @@ export default function Programs() {
             title: "Seguimiento online",
             subtitle: "Flexible y eficaz",
             description:
-                "Una opción pensada para personas que quieren resultados con una estructura clara y sin depender de un lugar físico.",
+                "Una opción pensada para personas que quieren estructura, flexibilidad y un plan adaptado sin depender de un lugar físico.",
             bullets: [
                 "Plan de entrenamiento personalizado",
                 "Pautas de nutrición adaptadas",
-                "Seguimiento y revisiones",
+                "Revisiones y seguimiento",
                 "Ideal si necesitas flexibilidad",
             ],
         },
@@ -41,7 +41,7 @@ export default function Programs() {
                 "Combina la flexibilidad del seguimiento online con sesiones presenciales puntuales para revisar técnica, progreso y estrategia.",
             bullets: [
                 "Base de trabajo online",
-                "Sesiones presenciales de control",
+                "Sesiones presenciales de apoyo",
                 "Ajustes periódicos",
                 "Ideal si quieres equilibrio y seguimiento",
             ],
@@ -138,7 +138,7 @@ export default function Programs() {
                         style={{ color: colors.textMuted }}
                     >
                         No hace falta decidirlo todo ahora. En la valoración inicial se puede
-                        ver qué opción tiene más sentido para tu caso.
+                        ver qué opción tiene más sentido para ti.
                     </p>
                 </div>
             </div>

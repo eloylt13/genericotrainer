@@ -40,7 +40,7 @@ export default function FinalCTA({
             className="text-base md:text-lg leading-relaxed mb-6"
             style={{ color: colors.textMuted }}
           >
-            Cuéntame qué quieres conseguir y veremos qué enfoque tiene más
+            Cuéntame qué quieres conseguir y veremos qué enfoque puede tener más
             sentido para ti, ya sea presencial, online o con un formato híbrido.
           </p>
 

@@ -135,7 +135,7 @@ export default function QuickQualifier({
             className="text-[11px] font-bold tracking-[0.18em] uppercase"
             style={{ color: colors.accent }}
           >
-            Entrenamiento personal
+            Momentum Coach
           </p>
 
           <div
@@ -198,10 +198,10 @@ export default function QuickQualifier({
 
           <div className="space-y-1">
             <p className="text-lg font-bold" style={{ color: colors.text }}>
-              Perfecto. Ya tengo una idea de lo que puede encajar contigo.
+              Perfecto. Ya sé qué puede encajar contigo.
             </p>
             <p className="text-sm" style={{ color: colors.textMuted }}>
-              Ahora te enseño cómo sería el proceso para ayudarte.
+              Ahora te enseño cómo podría ayudarte a conseguirlo con una estrategia clara y personalizada.
             </p>
           </div>
 
@@ -217,19 +217,17 @@ export default function QuickQualifier({
             Reserva tu valoración gratuita
           </button>
 
-          <a
-            href="https://wa.me/34XXXXXXXXX"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full max-w-xs py-3 rounded-xl font-semibold text-center no-underline text-sm transition-colors"
+          <button
+            onClick={scrollToNextSection}
+            className="block w-full max-w-xs py-3 rounded-xl font-semibold text-center text-sm transition-colors"
             style={{
               color: colors.textMuted,
               border: `1px solid ${colors.border}`,
               backgroundColor: "rgba(255,255,255,0.02)",
             }}
           >
-            Escríbeme por WhatsApp
-          </a>
+            Prefiero hablar por WhatsApp
+          </button>
         </div>
 
         <button
@@ -271,21 +269,21 @@ export default function QuickQualifier({
           className="text-[11px] font-bold tracking-[0.18em] uppercase"
           style={{ color: colors.accent }}
         >
-          Entrenamiento personal
+          Momentum Coach
         </p>
 
         <h1
           className="text-lg md:text-xl font-extrabold leading-snug text-center max-w-sm"
           style={{ color: colors.text }}
         >
-          Entrenamiento personal adaptado a tu objetivo, tu nivel y tu rutina
+          Encuentra la forma más realista de mejorar tu físico
         </h1>
 
         <p
           className="text-xs text-center leading-relaxed max-w-sm"
           style={{ color: colors.textMuted }}
         >
-          Pensado para personas con poco tiempo que quieren resultados sin hacerlo extremo.
+          Entrenamiento personalizado con seguimiento real, presencial u online.
         </p>
 
         <div className="flex gap-2 mt-1">
@@ -313,9 +311,8 @@ export default function QuickQualifier({
         </h2>
 
         <div
-          className={`w-full flex flex-col gap-2 transition-opacity duration-200 ${
-            transitioning ? "opacity-60" : "opacity-100"
-          }`}
+          className={`w-full flex flex-col gap-2 transition-opacity duration-200 ${transitioning ? "opacity-60" : "opacity-100"
+            }`}
         >
           {step.options.map((option) => {
             const isSelected = answers[currentStep] === option.id;

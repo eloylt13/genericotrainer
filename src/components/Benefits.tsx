@@ -10,24 +10,24 @@ export default function Benefits() {
 
     const benefits = [
         {
-            title: "Plan adaptado a tu rutina",
+            title: "Resultados más eficientes",
             description:
-                "Entrena con una estructura pensada para tu objetivo, tu nivel y el tiempo real que tienes disponible.",
+                "Entrena con una estructura pensada para tu objetivo, tu nivel y tu rutina real.",
         },
         {
             title: "Entrenamiento + nutrición",
             description:
-                "No solo sigues ejercicios: avanzas con una estrategia más completa y con mejores decisiones durante el proceso.",
+                "No solo sigues ejercicios: entiendes mejor cómo avanzar con una estrategia más completa.",
         },
         {
-            title: "Resultados con un proceso claro",
+            title: "Seguimiento continuo",
             description:
-                "Deja de probar cosas al azar y empieza a avanzar con un plan pensado para ti y para mantener la constancia.",
+                "Tienes control, ajustes y acompañamiento para no perder el rumbo a mitad del proceso.",
         },
         {
-            title: "Seguimiento real y continuo",
+            title: "Presencial u online",
             description:
-                "Tienes acompañamiento, ajustes y control para no perder el rumbo a mitad del proceso.",
+                "Elige la forma de trabajar que mejor encaje contigo y con tu día a día.",
         },
     ];
 

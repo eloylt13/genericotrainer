@@ -226,7 +226,7 @@ export default function ContactForm({
           className="text-xs leading-relaxed text-center"
           style={{ color: colors.textMuted }}
         >
-          Demo de formulario: al enviar se muestra la página de confirmación.
+          Esta demo muestra cómo podría funcionar el flujo de captación para un entrenador personal.
         </p>
       </div>
     </form>

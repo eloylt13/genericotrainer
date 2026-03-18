@@ -11,21 +11,21 @@ export default function HowItWorks() {
     const steps = [
         {
             number: "01",
-            title: "Me cuentas tu objetivo y tu punto de partida",
+            title: "Completa un breve formulario",
             description:
-                "Primero revisamos qué quieres conseguir, cómo estás ahora y qué opción encaja mejor contigo.",
+                "Cuéntame tu objetivo, tu punto de partida y qué modalidad te interesa para entender mejor tu caso.",
         },
         {
             number: "02",
-            title: "Hacemos una valoración inicial gratuita",
+            title: "Ten una consulta gratuita",
             description:
-                "Resolvemos dudas, revisamos tu caso y definimos un enfoque realista según tu situación.",
+                "Revisamos tu situación, resolvemos dudas y te explico qué enfoque tendría más sentido para ayudarte.",
         },
         {
             number: "03",
-            title: "Empiezas con una estrategia adaptada a ti",
+            title: "Empieza tu plan personalizado",
             description:
-                "Recibes entrenamiento, pautas de nutrición y seguimiento para avanzar con más estructura y claridad.",
+                "Si encaja contigo, empezamos con una estrategia adaptada a tu objetivo, tu nivel y tu rutina.",
         },
     ];
 
@@ -54,8 +54,7 @@ export default function HowItWorks() {
                         className="text-base md:text-lg leading-relaxed mt-4"
                         style={{ color: colors.textMuted }}
                     >
-                        Sin complicarte, sin promesas vacías y con un enfoque claro desde el
-                        principio.
+                        Un proceso claro, simple y pensado para que sepas desde el principio qué pasos vamos a seguir.
                     </p>
                 </div>
 
